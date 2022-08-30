@@ -1,0 +1,9 @@
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects p {
+    font-size: 30px;
+}

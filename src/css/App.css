@@ -1,0 +1,58 @@
+/* ------------- Header ------------- */
+
+.header {
+  height: 15vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 3vh;
+  color: white;
+  background-color: #282c34;
+}
+
+.header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header__image {
+  height: 12vh;
+}
+
+.header__icon {
+  height: 3vh;
+  width: 3vh;
+}
+
+.header p, h3, img {
+  cursor: pointer;
+}
+
+/* ------------- body ------------- */
+
+.body {
+  background-color: slategray;
+  height: 85vh;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* ------------- footer ------------- */
+
+footer {
+  background-color: #282c34;
+  text-align: center;
+  padding: 10px;
+  line-height: 10px;
+  color: white;  
+}

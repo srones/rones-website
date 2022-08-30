@@ -1,0 +1,9 @@
+.homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage p {
+    font-size: 30px;
+}
