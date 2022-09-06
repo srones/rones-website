@@ -1,10 +1,10 @@
 import React from 'react'
 import resumeImage from '../images/resume.jpg'
-import '../css/Resume.css';
+import '../App.css'
 
 const Resume = () => {
   return (
-      <div>
+      <div className='resume-container'>
         <img src={resumeImage} alt='resume'/>
       </div>
   )

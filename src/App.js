@@ -1,107 +1,51 @@
-import { useState } from 'react'
-import profileImage from './images/profile.jpeg'
-import linkedinImage from './images/linkedin.png'
-import githubImage from './images/github.png'
-import './css/App.css';
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
+import Header from './components/Header';
+import Homepage from './components/Homepage';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
-import Homepage from './components/Homepage';
 
-const Pages = {
-  Homepage: "homepage",
-  Projects: "projects",
-  Resume: "resume",
-}
+import './App.css';
 
 function App() {
 
-  const [currentPage, setCurrentPage] = useState(Pages.Homepage)
+  const [isMobile, setIsMobile] = useState(false)
+
+    const updateDimensions = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+    
+    useEffect(() => {
+        updateDimensions()  
+        window.addEventListener('resize', updateDimensions)
+        return () => window.removeEventListener('resize', updateDimensions)
+    }, [])
 
   return (
-    <>
+    <BrowserRouter>
+
       {/* --------------------- Header --------------------- */}
-
-      <header className="header">
-
-        <div className='header__left'>
-
-          <img 
-            src = {profileImage} 
-            alt = "pro_pic"
-            className = 'header__image'
-            onClick = { () => {setCurrentPage(Pages.Homepage)} }
-          />
-
-          <h3 
-            onClick={ () => {setCurrentPage(Pages.Homepage)} }
-          >
-            Stav Rones
-          </h3>
-        </div>
-
-        <div className='header__right'>
-          <p 
-            className="App-link"
-            onClick={() => {setCurrentPage(Pages.Resume)}}
-          >
-            Resume
-          </p>
-
-          <p 
-            className="App-link"
-            onClick={() => {setCurrentPage(Pages.Projects)}}
-          >
-            Projects
-          </p>
-
-          {/* external links */}
-
-          <a href="https://github.com/srones" target="_blank" rel="noreferrer noopener">
-            <img 
-              src = {githubImage} 
-              alt = "pro_pic"
-              className = 'header__icon'
-            />
-          </a>
-
-          <a href="https://www.linkedin.com/in/stavrones/" target="_blank" rel="noreferrer noopener">
-            <img 
-              src = {linkedinImage} 
-              alt = "pro_pic"
-              className = 'header__icon'
-            />
-          </a>
-        </div>
-
-      </header>
+      <Header isMobile={isMobile}/>
 
       {/* --------------------- Body --------------------- */}
 
       <div className="body">
-
-        {(() => {
-          switch(currentPage) {
-            case Pages.Homepage:
-              return <Homepage />
-            case Pages.Resume:
-              return <Resume />
-            case Pages.Projects:
-              return <Projects />
-            default:
-              break
-          }
-        })() }
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
       </div>
 
       {/* --------------------- Footer --------------------- */}
 
-      <footer>
+      {/* <footer>
         <p>Contact:</p>
         <p>stav.rones@gmail.com</p>
-      </footer>
+      </footer> */}
 
-    </>
+    </BrowserRouter>
   );
 }
 
