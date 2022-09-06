@@ -3,8 +3,13 @@ import {useEffect, useState} from 'react'
 import profileImage from '../images/profile.jpeg'
 import linkedinImage from '../images/linkedin.png'
 import githubImage from '../images/github.png'
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-const Header = ({ isMobile }) => {
+const Header = ({ isMobile, showMenu }) => {
+
+    const showPopUp = () => {
+        console.log("test")
+    }
 
     return (
     <header>
@@ -17,7 +22,7 @@ const Header = ({ isMobile }) => {
 
                 {
                     isMobile? 
-                    <p>hamburger</p> 
+                    <GiHamburgerMenu id='hamburger' onClick={showMenu} />
                     : 
                     <>
                         <a href="/resume">Resume</a>
