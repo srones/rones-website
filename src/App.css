@@ -1,7 +1,7 @@
 /* ------------- Header ------------- */
-header {
-  background-color: lightgray;
-}
+/* header {
+  background-color: slateg;
+} */
 
 a {
   color: black;
@@ -9,7 +9,7 @@ a {
 }
 
 .header-container {
-  height: 5.5vh;
+  height: 75px;
   width: 1024px;
   margin: auto;
 
@@ -18,7 +18,7 @@ a {
   justify-content: space-between;
   align-items: center;
 
-  background-color: lightgray;
+  border-bottom: 1px solid black;
 }
 
 .header-left, .header-right {
@@ -44,7 +44,7 @@ a {
 }
 
 .header-image {
-  height: 80%;
+  height: 60%;
   border-radius: 50%;
 }
 
@@ -93,35 +93,21 @@ a {
   width: 1024px;
   margin: auto;
 
-  /* background-color: lightgray; */
-}
-
-
-/* ------------- footer ------------- */
-
-footer {
-  background-color: rgb(182, 193, 205);
-  text-align: center;
-  padding: 10px;
-  line-height: 10px;
-  color: white;  
 }
 
 /* ------------- homepage ------------- */
 
 .homepage-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 10px;
 }
 
-/* all the time */
-.homepage-container .item {
-  width: 1024px;
+.homepage-container > * {
   text-align: center;
-
-  font-size: 30px;
 }
 
 /* ------------- resume ------------- */
@@ -130,48 +116,57 @@ footer {
   text-align: center;
   justify-content: center;
   height: 100%;
+  
 }
 
 .resume-container img {
-  height: 100%
+  width: 100%;
+  object-fit: cover; 
 }
 
 /* ------------- projects ------------- */
 
 .projects-container {
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* flex-wrap: wrap; */
-  /* align-content: ; */
+  width: 70%;
+  margin: auto;
+  padding-top: 50px;
 
-  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* ------------- project ------------- */
 
 .project-thumbnail {
-  
-  margin: 10px;
-  padding-left: 10px;
+  width: 46%;
+  margin: 2%;
+  margin-bottom: 6%;
 
-  width: 90%;
-  height: 20%;
-  line-height: 1;
   cursor: pointer;
-
-  border-left: solid;
-  border-left-width: 3px;
-
-  background-color: aliceblue;
+  text-align: center;
 }
 
-.project-thumbnail > img {
+.image-container {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 150px;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.project-thumbnail > h3, p {
+  margin: 10px;
+}
+
+#project-back-button {
+  width: 40px;
+  height: 40px;
 }
 
 /* ------------- MOBILE ------------- */
@@ -184,7 +179,14 @@ footer {
     width: 100%;
   }
 
-  .homepage-container .item {
+  .projects-container {
+    padding-top: 0%;
     width: 100%;
+  }
+
+  .project-thumbnail {
+    width: 90%;
+    margin: 10%;
+    margin-bottom: 5%;
   }
 }
