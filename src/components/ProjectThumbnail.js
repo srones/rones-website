@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../App.css'
 
-const Project = ({ project, onClick }) => {
+const ProjectThumbnail = ({ project, onClick }) => {
   
   return (
     <div className="project-thumbnail" onClick={onClick}>
@@ -12,4 +12,4 @@ const Project = ({ project, onClick }) => {
   )
 }
 
-export default Project
+export default ProjectThumbnail
