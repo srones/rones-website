@@ -5,7 +5,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Homepage from './components/Homepage';
-import Resume from './components/Resume';
+import Error from './components/Error';
 import Projects from './components/Projects';
 import MobileMenu from './components/MobileMenu';
 
@@ -42,8 +42,9 @@ function App() {
           <div className="body">
               <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/resume" element={<Resume />} />
                 <Route path="/projects" element={<Projects />} />
+                <Route path="/projects/:id" element={<Projects />} />
+                <Route path="*" element={<Error />} />
               </Routes>
           </div>
         </>

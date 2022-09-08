@@ -10,6 +10,13 @@ const ProjectThumbnail = ({ project, onClick }) => {
       </div>
       <h3>{project.title}</h3>
       <p>{project.description}</p>
+      <div className="thumbnail-tags-container">
+        {
+          project.tags.map((tag) => {
+            return <p className="thumbnail-tag">{tag}</p>
+          })
+        }
+      </div>
     </div>
   )
 }

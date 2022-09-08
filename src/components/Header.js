@@ -24,8 +24,8 @@ const Header = ({ isMobile, showMenu }) => {
                     <GiHamburgerMenu id='hamburger' onClick={showMenu} />
                     : 
                     <>
-                        <a href="/resume">Resume</a>
                         <a href="/projects">Projects</a>
+                        <a href={process.env.PUBLIC_URL + '/resume.pdf'} target="_blank" rel="noreferrer noopener">Resume</a>
                         <a href="https://github.com/srones" target="_blank" rel="noreferrer noopener">
                             <img src = {githubImage} alt = "pro_pic" className = 'header__icon' />
                         </a>
