@@ -13,7 +13,7 @@ const ProjectThumbnail = ({ project, onClick }) => {
       <div className="thumbnail-tags-container">
         {
           project.tags.map((tag) => {
-            return <p className="thumbnail-tag">{tag}</p>
+            return <p className="thumbnail-tag" key={tag}>{tag}</p>
           })
         }
       </div>

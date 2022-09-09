@@ -7,8 +7,8 @@ const MobileMenu = ({ hideMenu }) => {
         <div className='mobile-menu'>
             <FaAngleLeft id='back-button' onClick={hideMenu}/>
             <div className='mobile-menu-container'>
-                <a href="/resume">Resume</a>
                 <a href="/projects">Projects</a>
+                <a href={process.env.PUBLIC_URL + '/resume.pdf'} target="_blank" rel="noreferrer noopener">Resume</a>
                 <a href="https://github.com/srones" target="_blank" rel="noreferrer noopener">Github</a>
                 <a href="https://www.linkedin.com/in/stavrones/" target="_blank" rel="noreferrer noopener">Linkedin</a>  
             </div>

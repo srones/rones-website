@@ -12,7 +12,8 @@ import { reachJSX } from './reach.js'
 export const projects_list =  [
     {
         id: "reach",
-        title: "Reach: Discover Events",
+        title: "Reach - Discover Events",
+        date: "August 2022",
         description: "Reach is an events-based social networking platform for iOS of which I am the co-founder and sole developer",
         image: reachImage,
         pinned: true,
