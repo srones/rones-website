@@ -25,16 +25,18 @@ const Project = () => {
 
     return (
         <div className="project-container">
-          <h1>{currentProject.title}</h1>
-          <p className="date">{currentProject.date}</p>
-          <div className="thumbnail-tags-container">
-              {
-                currentProject.tags?.map((tag) => {
-                  return <p className="thumbnail-tag" key={tag}>{tag}</p>
-                })
-              }
+          <div className="project-header">
+            <h1>{currentProject.title}</h1>
+            <p className="date">{currentProject.date}</p>
+            <div className="thumbnail-tags-container">
+                {
+                  currentProject.tags?.map((tag) => {
+                    return <p className="thumbnail-tag" key={tag}>{tag}</p>
+                  })
+                }
+            </div>
           </div>
-            {currentProject.jsx}
+          {currentProject.jsx}
         </div>
     )
 }

@@ -10,6 +10,7 @@ import Error from './components/Error';
 import Projects from './components/Projects';
 import MobileMenu from './components/MobileMenu';
 import Project from './components/Project';
+import Footer from './components/Footer';
 
 import './App.css';
 
@@ -53,6 +54,9 @@ function App() {
                 <Route path="*" element={<Error />} />
               </Routes>
           </div>
+
+          {/* --------------------- Footer --------------------- */}
+          <Footer />
         </>
       }
     </BrowserRouter>

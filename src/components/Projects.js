@@ -23,7 +23,7 @@ const Projects = ({ projects_list }) => {
   // --------------- return --------------
   return (
     <>
-      <h2 className='projects-title'> Pinned </h2>
+      <h2 className='projects-title'> Featured </h2>
       <div className='projects-container'>
         {
         projects_list.map( (project) => (
