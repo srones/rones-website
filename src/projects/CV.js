@@ -4,10 +4,15 @@ import cornerImage2 from '../images/CV/corner2.jpg'
 import matchesImage from '../images/CV/matches1.jpg'
 import mosaic1 from '../images/CV/mosaic1.jpg'
 import mosaic2 from '../images/CV/mosaic2.jpg'
+import castLeft from '../images/CV/cast-left.JPG'
+import conesLeft from '../images/CV/cones-left.JPG'
+import castDepth from '../images/CV/cast-depth.png'
+import conesDepth from '../images/CV/cones-depth.png'
 
 const campsLink = "https://coe.northeastern.edu/people/camps-octavia/"
 const homographyLink = "https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html"
 const openCVLink = "https://docs.opencv.org/4.x/"
+const fundLink = "https://en.wikipedia.org/wiki/Fundamental_matrix_(computer_vision)"
 
 export const cvJSX = <>
 
@@ -24,6 +29,7 @@ export const cvJSX = <>
             <li>Normalized Cross Correlation</li>
             <li>RANSAC Homography Estimation</li>
             <li>Image Mosaicing</li>
+            <li>Stereo Vision</li>
         </ul>
     </p>
     <h3>Project 1 - Motion Detection </h3>
@@ -51,7 +57,7 @@ export const cvJSX = <>
         of view and combines them into one large image. The best example of this is using
         a panoramic feature on a smartphone. Two sets of images were used to perform mosaicing,
         and each set had 2 images. Since the two images had different coordinate systems, a 
-        <a href={homographyLink}> homography </a> needed to be estimated to properly warp one 
+        <a href={homographyLink}> homography matrix </a> needed to be estimated to properly warp one 
         image before it was combined with the other.
         </p>
     <p>
@@ -91,9 +97,36 @@ export const cvJSX = <>
     </div>
     <img src={mosaic2} alt='' className="project-image"/>
     <div style={{textAlign: "center"}} >
-    <p>
+        <p>
             <i>Mosaiced images from set 2</i>
         </p>
     </div>
     <h3>Project 3</h3>
+    <p>
+        A single 2D image lacks the ability to convey depth - something humans are able to do well using our
+        natural stero vision. Stero camera sytems view the same scene from slightly different angles using two cameras,
+        and the disparities between features allow for depth estimation and the reconstruction of the 3D environment. 
+        Using feature correspondences and the stero system measurements such as camera distance and focal length,
+        and <a href={fundLink}>fundamental matrix </a> can be estimated which is used to rectify the images and 
+        assign a relative depth to each feature point. Pictured below is one of the original stereo images from 
+        each set and its corresponding depth map.
+    </p>
+    <div style={{display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between"}}>
+        <img src={castLeft} alt='' style={{width: "48%"}}/>
+        <img src={castDepth} alt='' style={{width: "48%"}}/>
+    </div>
+    <div style={{textAlign: "center"}} >
+        <p>
+            <i>Image from set 1 with its depth reconstruction using a stero pair</i>
+        </p>
+    </div>
+    <div style={{display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between"}}>
+        <img src={conesLeft} alt='' style={{width: "48%"}}/>
+        <img src={conesDepth} alt='' style={{width: "48%"}}/>
+    </div>
+    <div style={{textAlign: "center"}} >
+        <p>
+            <i>Image from set 2 with its depth reconstruction using a stero pair</i>
+        </p>
+    </div>
 </>
