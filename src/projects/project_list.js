@@ -3,12 +3,14 @@ import iSensSarsImage from '../images/iSenSARS/iSensSarsImage.png'
 import subsetSumImage from '../images/subset-sum/exhaustive_tree.png'
 import HPCImage from '../images/HPC/hpc-cover.png'
 import cvImage from '../images/CV/cover-image.png'
+import statImage from '../images/stat-inference/cover-image.png'
 
 import { reachJSX } from './reach.js'
 import { iSenSARSJSX } from './iSensSars.js'
 import { subsetSumJSX } from './subset-sum.js'
 import { hpcJSX } from './HPC'
 import { cvJSX } from './CV.js'
+import { statJSX } from './stat-inference.js'
 
 export const projects_list =  [
     {
@@ -50,15 +52,16 @@ export const projects_list =  [
     //     tags: ["Simulation", "Python"],
     //     jsx: <><h1>Renewable Energy Simulation</h1></>
     // },
-    // {
-    //     id: "stat-inference",
-    //     title: "Statistical Inference",
-    //     description: "Various techniques to extract information from noisy data",
-    //     image: image,
-    //     pinned: false,
-    //     tags: ["Algorithms", "Matlab"],
-    //     jsx: <><h1>Statistical Inference</h1></>
-    // },
+    {
+        id: "stat-inference",
+        title: "Statistical Inference",
+        description: "Various techniques to extract meaningful information from noisy data",
+        image: statImage,
+        pinned: false,
+        date: 'Spring 2022',
+        tags: ["Algorithms", "Matlab"],
+        jsx: statJSX
+    },
     {
         id: "computer-vision",
         title: "Computer Vision",
